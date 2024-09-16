@@ -1,6 +1,6 @@
 
 from fastapi import FastAPI
-from routers import passwords
+from routers import passwords, auth
 
 
 app = FastAPI(
@@ -9,6 +9,7 @@ app = FastAPI(
 
 # Connecting routers for passwords
 app.include_router(passwords.router)
+app.include_router(auth.router)
 
 
 @app.get("/")
